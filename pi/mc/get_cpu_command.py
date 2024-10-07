@@ -7,7 +7,13 @@ from moteus_controller import MoteusController
 
 MSG_SIZE = 1024
 
+"""
+Receives a command from the moteus controller cpu. 
 
+Args:
+sock : socket we are reading from
+_m : The moteus controller to send messages to
+"""
 async def get_cpu_command(sock: socket.socket, _m: MoteusController):
 	"""
 	Receive command from bridge nodes using tcp socket

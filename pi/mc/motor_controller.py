@@ -8,7 +8,6 @@ from MoteusException import MoteusPermissionsError, MoteusCanError
 
 class MotorController(MoteusController):
 
-	async def on_open(self, transport=None, servos=None):
 	""" This class defines the motor controller.
 
 	Args:
