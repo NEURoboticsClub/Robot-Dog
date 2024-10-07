@@ -25,7 +25,9 @@ def get_parsed_results():
 		"FAULT": 1.0
 	}]
 
-
+"""
+Retrieve commands from the controller cpu 
+"""
 async def get_cpu_command(sock):
 	loop = asyncio.get_event_loop()
 	while True:

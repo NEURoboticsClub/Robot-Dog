@@ -281,7 +281,14 @@ class MoteusController(abc.ABC):
 		return self.isReady.is_set()
 
 	# Wait until it is ready or there is an error
+	"""
+	Commands the dog to jump
 
+	Args:
+	factor (int): Essentially the multiplier of force to use when jumping
+	pos_offset_1 (int): 
+	pos_offset_2 (int):
+	"""
 	async def jump(self, factor=3, pos_offset_1=0, pos_offset_2=0):
 		self.mprint('crouching')
 		crouchtask1 = asyncio.create_task(
@@ -311,7 +318,12 @@ class MoteusController(abc.ABC):
 		self.set_attributes(1, pos=math.nan, velocity=0, torque=2)
 		self.set_attributes(2, pos=math.nan, velocity=0, torque=2)
 
+	"""
+	Sends position velocity torque and other data to all the other motors
 
+	Args:
+	
+	"""
 	async def send_mc_states(self, sock: socket.socket):
 		mc_id = 1
 		loop = asyncio.get_event_loop()
